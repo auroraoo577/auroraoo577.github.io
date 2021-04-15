@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
 <head>
-    <!-- so meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="auroraoo577">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="auroraoo577">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
     <meta name="description" content="今天是第一天！  学习如何书写博客！如果有学习能容会更新的。   无序列表 -  + 空格  1.有序列表2.冲冲冲丫丫丫咿呀咿呀哟baidu More info: Writing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World！">
@@ -19,132 +33,383 @@
 <meta property="article:author" content="auroraoo577">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2190102800,272781899&fm=26&gp=0.jpg">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    
-      
-        
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>Hello World！</title>
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/css/style.css">
+    <title>Hello World！ · auroraoo&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
 
-    <!-- persian styles -->
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <!-- rss -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
-	<!-- mathjax -->
-	
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body class="max-width mx-auto px3 ltr">
     
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        
-        <li><a class="icon" aria-label="Next post " href="/2021/04/14/hello-world/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://auroraoo577.github.io.git/2021/04/15/bolg_1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&text=Hello World！"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&is_video=false&description=Hello World！"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Hello World！&body=Check out this article: https://auroraoo577.github.io.git/2021/04/15/bolg_1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&name=Hello World！&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&t=Hello World！"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
+        <body class="post-body">
+    
+    
+<header class="header">
 
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >auroraoo&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Hello World！</a>
+            </div>
     </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E5%A4%A9%E6%98%AF%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">今天是第一天！</span></a></li></ol>
+    
+    <a class="home-link" href=/>auroraoo's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Hello World！
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">52</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/04/15</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
     </div>
-  </span>
 </div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
 
-    
-    <div class="content index py4">
-        
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-        Hello World！
-    </h1>
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
 
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
 
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">auroraoo577</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2021-04-15T02:57:06.619Z" itemprop="datePublished">2021-04-15</time>
-        
-      
-    </div>
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
 
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
 
-      
+      async(arr[0], success, currReject)
+  }
 
-      
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <h2 id="今天是第一天！"><a href="#今天是第一天！" class="headerlink" title="今天是第一天！"></a>今天是第一天！</h2><blockquote>
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="今天是第一天！"><a href="#今天是第一天！" class="headerlink" title="今天是第一天！"></a>今天是第一天！</h2><blockquote>
 <p> 学习如何书写博客！如果有学习能容会更新的。</p>
 </blockquote>
 <ul>
@@ -153,141 +418,289 @@
 <p>1.有序列表<br>2.冲冲冲丫丫丫咿呀咿呀哟<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2190102800,272781899&fm=26&gp=0.jpg" alt="avatar"><br><a href="www.baidu.com">baidu</a></p>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
 
-  </div>
-</article>
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://auroraoo577.github.io.git">auroraoo577</a>
+            <p>原文链接：<a href="https://auroraoo577.github.io.git/2021/04/15/bolg_1/">https://auroraoo577.github.io.git/2021/04/15/bolg_1/</a>
+            <p>发表日期：<a href="https://auroraoo577.github.io.git/2021/04/15/bolg_1/">April 15th 2021, 10:57:06 am</a>
+            <p>更新日期：<a href="https://auroraoo577.github.io.git/2021/04/15/bolg_1/">April 15th 2021, 11:19:53 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/04/14/hello-world/" title= "Hello World！">
+                    <div class="prevTitle">Hello World！</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
 
-
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
-        
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E5%A4%A9%E6%98%AF%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">今天是第一天！</span></a></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://auroraoo577.github.io.git/2021/04/15/bolg_1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&text=Hello World！"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&is_video=false&description=Hello World！"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Hello World！&body=Check out this article: https://auroraoo577.github.io.git/2021/04/15/bolg_1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&title=Hello World！"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&name=Hello World！&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://auroraoo577.github.io.git/2021/04/15/bolg_1/&t=Hello World！"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
-</div>
-
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
+<!-- City版安装代码已完成 -->
     
     
-    2016-2021
-    auroraoo577
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
         
-      </ul>
-    </nav>
-  </div>
+    
+        
+            
+                <a href="mailto:2817269704@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/auroraoo577" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/wechat.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
 </footer>
-
     </div>
-    <!-- styles -->
-
-
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
 
 
 
 
-<!-- clipboard -->
-
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
-  
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
-      e.clearSelection();
-    })
-  })
-  </script>
 
 
-<script src="/js/main.js"></script>
 
-<!-- search -->
+top:50vh;
 
-<!-- Google Analytics -->
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Umami Analytics -->
-
-<!-- Disqus Comments -->
-
-
-</body>
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E5%A4%A9%E6%98%AF%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">今天是第一天！</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 2
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/15/bolg_1/" >Hello World！</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/14</span><a class="archive-post-title" href= "/2021/04/14/hello-world/" >Hello World！</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "auroraoo577"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
 </html>
+
+
