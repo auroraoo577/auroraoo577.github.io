@@ -27,13 +27,13 @@
 <meta property="og:site_name" content="New Blog">
 <meta property="og:description" content="3&#x2F;20 分支和跳转if和while区别单次判断使用if，while循环判断 123clear input buffwhile(getchar()!&#x3D;&amp;#x27;\n&amp;#x27;);\\清除输入数据缓冲  3&#x2F;22复习笔记C语言有32个关键字，9种控制语句，34中运算符 123456789101112131415161718192021222324252627282930313">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="j:\blog\source_posts\%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87\image-20230322210605294.png">
-<meta property="og:image" content="j:\blog\source_posts\%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87\image-20230322214419284.png">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/auroraoo577/auroraoo577.github.io@main/blog_pic/image-20230322210605294.3zoizs1l3aw0.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/auroraoo577/auroraoo577.github.io@main/blog_pic/image-20230322214419284.7fuedt1188o0.webp">
 <meta property="article:published_time" content="2023-03-24T11:40:46.905Z">
-<meta property="article:modified_time" content="2023-03-24T11:47:26.143Z">
+<meta property="article:modified_time" content="2023-03-24T12:19:56.891Z">
 <meta property="article:author" content="auroraoo577">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="j:\blog\source_posts\%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87\image-20230322210605294.png">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/auroraoo577/auroraoo577.github.io@main/blog_pic/image-20230322210605294.3zoizs1l3aw0.webp">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
@@ -416,7 +416,7 @@ height:50vh;
 <h3 id="3-x2F-22复习笔记"><a href="#3-x2F-22复习笔记" class="headerlink" title="3&#x2F;22复习笔记"></a>3&#x2F;22复习笔记</h3><p>C语言有32个关键字，9种控制语句，34中运算符</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">关键字：（由系统定义，不能重作其他定义）</span><br><span class="line">auto     break   case     char     const</span><br><span class="line">continue default do       double   else</span><br><span class="line">enum     extern  float    for      goto </span><br><span class="line">if       int     long     register return</span><br><span class="line">short    signed  sizeof   static   struct </span><br><span class="line">switch   typedef unsigned union    void </span><br><span class="line">volatile while</span><br><span class="line">数据类型关键字：</span><br><span class="line">char,int,short,long,float,double</span><br><span class="line">signed,unsigned,struct,union,enum,void</span><br><span class="line">控制语句关键字</span><br><span class="line">if,else,switch,case,default</span><br><span class="line">for,do,while,continue,break,goto,return</span><br><span class="line">存储类型关键字</span><br><span class="line">auto,extern,register,static,const</span><br><span class="line">其他关键字</span><br><span class="line">sizeof,typedef,volative</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">控制语句：</span><br><span class="line">1.if()~else~:</span><br><span class="line">if (expression) </span><br><span class="line">	statement1 </span><br><span class="line">else</span><br><span class="line">	statement2</span><br><span class="line">2.for()~:</span><br><span class="line">for(initialize;test;update)</span><br><span class="line">	statement</span><br><span class="line">for循环，如果条件部分不写，默认为真。</span><br><span class="line">for语句使用3个表达式控制循环过程，分别用分号隔开。initialize表达式在执行for语句之前只执行一次；然后对test表达式求值，如果表达式为真 （或非零），执行循环一次；接着对update表达式求值，并再次检查test表达 式。for语句是一种入口条件循环，即在执行循环之前就决定了是否执行循环。因此，for循环可能一次都不执行。statement部分可以是一条简单语句或复合语句。 </span><br><span class="line">入口条件循环：在执行循环体之前，先判断条件是否满足，满足就执行，条件不满足就不执行。</span><br><span class="line">3.while()~</span><br><span class="line">while (expression)</span><br><span class="line">      statement;</span><br><span class="line">4.do~while()</span><br><span class="line">do</span><br><span class="line">	statement</span><br><span class="line">while(expression);</span><br><span class="line">注意，do while循环以分号结尾</span><br><span class="line">int limit = 10;</span><br><span class="line">	int count = 2;</span><br><span class="line">	do</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;hello GEC2301!\n&quot;);</span><br><span class="line">	&#125; while (count++&lt;10);</span><br><span class="line">do while循环在执行完循环体后才执行测试条件，所以至少执行循环体一次。</span><br><span class="line">5 continue</span><br><span class="line">执行到该语句时，会跳过本次迭代/循环的剩余部分，并开始下一轮迭代/循环。如果continue语句在嵌套循环内，则只会影响包含该语句的内层循环。</span><br><span class="line">6 break</span><br><span class="line">程序执行到循环中的break语句时，会终止包含它的循环，并继续执行循环后的下一条语句。如果break语句在嵌套循环内，则只会影响包含该语句的内层循环。</span><br><span class="line">7 switch~case</span><br><span class="line">switch (expression)</span><br><span class="line">		&#123;</span><br><span class="line">			case label1: statement1//使用break跳出switch</span><br><span class="line">			case label2: statement2</span><br><span class="line">			default: statement3</span><br><span class="line">		&#125;</span><br><span class="line">程序根据expression的值跳转至相应的case标签处。然后，执行剩下的所有语句，除非执行到break语句进行跳出。expression和case标签都必须是整数值（包括char类型），标签必须是常量或完全由常量组成的表达式。如果没有case标签与expression的值匹配，控制则转至标有default的语句（如果 有的话）；否则，将转至执行紧跟在switch语句后面的语句。</span><br><span class="line">8 return goto</span><br><span class="line">return代表函数执行完毕，返回return地表函数的终止</span><br><span class="line">return 0代表程序执行成功，return -1代表程序执行失败</span><br><span class="line">int main()和void main()在C语言中是一样的，但C++只接受int main这种定义方式</span><br></pre></td></tr></table></figure>
 
-<p><img src="J:\blog\source_posts\博客图片\image-20230322210605294.png" alt="image-20230322210605294"></p>
+<p><img src="https://cdn.staticaly.com/gh/auroraoo577/auroraoo577.github.io@main/blog_pic/image-20230322210605294.3zoizs1l3aw0.webp" alt="avater"></p>
 <h5 id="gcc编译文件"><a href="#gcc编译文件" class="headerlink" title="gcc编译文件"></a>gcc编译文件</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">gcc -o file 指定生成的输出文件名为file</span><br><span class="line">gcc -E 只进行预处理：宏定义展开、头文件展开、条件编译等，同时将代码中的注释删除 不会检查语法</span><br><span class="line">gcc -S 只进行预处理和编译       编译：检查语法，将预处理后文件编译生成汇编文件</span><br><span class="line">gcc -c 只进行预处理、编译和汇编  汇编：将汇编文件生成目标文件（二进制文件）</span><br><span class="line">        链接：C语言写的程序是需要依赖各种库的，所以编译之后还需要把库链接到最终的可执行程序中去</span><br><span class="line">源代码.c --&gt;预处理器（头文件.h）--&gt;编译器--&gt;汇编--&gt;目标代码.o</span><br><span class="line">分步编译</span><br><span class="line">预处理:gcc -E hello.c -o hello.i 编译后的C语言文件</span><br><span class="line">编译:gcc -S hello.i -ohello.s 编译后的汇编文件</span><br><span class="line">汇编:gcc -c hello.s -o hell.o 编译后的目标文件</span><br><span class="line">链接:gcc hello.o -o hello</span><br></pre></td></tr></table></figure>
 
 <h5 id="include-lt-gt-与-include-“”的区别："><a href="#include-lt-gt-与-include-“”的区别：" class="headerlink" title="#include&lt; &gt; 与 #include “”的区别："></a>#include&lt; &gt; 与 #include “”的区别：</h5><ul>
@@ -428,7 +428,7 @@ height:50vh;
 <p>在64位的CPU架构上运行了64位的软件操作系统，那么这个系统是64位。</p>
 <p>在64位的CPU架构上，运行了32位的软件操作系统，那么这个操作系统就是32位</p>
 <p>64位的软件不能运行在32位的CPU上</p>
-<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p><img src="J:\blog\source_posts\博客图片\image-20230322214419284.png" alt="image-20230322214419284"></p>
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p><img src="https://cdn.staticaly.com/gh/auroraoo577/auroraoo577.github.io@main/blog_pic/image-20230322214419284.7fuedt1188o0.webp" alt="avater"></p>
 <p>声明一个变量不需要建立存储空间，如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extern int a;</span><br><span class="line">int a = 10;//error，没有空间，不可以赋值</span><br></pre></td></tr></table></figure>
 
@@ -445,13 +445,18 @@ height:50vh;
             <p>Author：<a href="https://auroraoo577.github.io.git">auroraoo577</a>
             <p>原文链接：<a href="https://auroraoo577.github.io.git/2023/03/24/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://auroraoo577.github.io.git/2023/03/24/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
             <p>发表日期：<a href="https://auroraoo577.github.io.git/2023/03/24/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">March 24th 2023, 7:40:46 pm</a>
-            <p>更新日期：<a href="https://auroraoo577.github.io.git/2023/03/24/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">March 24th 2023, 7:47:26 pm</a>
+            <p>更新日期：<a href="https://auroraoo577.github.io.git/2023/03/24/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">March 24th 2023, 8:19:56 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2023/03/24/gitee%E9%83%A8%E7%BD%B2/" title= "gitee部署">
+                    <div class="nextTitle">gitee部署</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -772,9 +777,35 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 16
+        Total : 18
         </div>
         <!-- search  -->
         
@@ -834,6 +865,16 @@ top:50vh;
     
     <div class="archive-year"> 2023 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2023/03/24/%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE/" >VS创建多个项目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2023/03/24/gitee%E9%83%A8%E7%BD%B2/" >gitee部署</a>
+        </li>
     
     
         <li class="archive-post-item">
