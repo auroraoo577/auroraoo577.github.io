@@ -278,7 +278,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">743</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">753</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -430,7 +430,7 @@ height:50vh;
 <li>array接口</li>
 </ul>
 <h4 id="常用数据类型及内容"><a href="#常用数据类型及内容" class="headerlink" title="常用数据类型及内容"></a>常用数据类型及内容</h4><h6 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h6><ul>
-<li>byte  1个字节=8bit 范围-128~127 </li>
+<li>byte  1个字节&#x3D;8bit 范围-128~127 </li>
 <li>short 2字节</li>
 <li>int      4字节</li>
 <li>long   8字节  定义long型的时候必须以小写的l或大写L结尾。</li>
@@ -440,7 +440,7 @@ height:50vh;
 <li>double   双精度8个字节</li>
 </ul>
 <p>通常定义浮点型变量时用double类型</p>
-<h6 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h6><p>字符型char 1字符=两字节<br>定义char型变量，通常使用一对’ ‘,内部只能写一个字符</p>
+<h6 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h6><p>字符型char 1字符&#x3D;两字节<br>定义char型变量，通常使用一对’ ‘,内部只能写一个字符</p>
 <h6 id="boolean-布尔类型"><a href="#boolean-布尔类型" class="headerlink" title="boolean 布尔类型"></a>boolean 布尔类型</h6><p>只有两个值：true 和 flase</p>
 <h4 id="基本数据类型运算规则"><a href="#基本数据类型运算规则" class="headerlink" title="基本数据类型运算规则"></a>基本数据类型运算规则</h4><blockquote>
 <p>自动类型提升:<br>当容量小的数据类型变量和容量大的数据类型的变量做运算时，<br>结果自动提升为容量大的数据类型<br>当byte char short三种类型的变量做运算时，结果为int型。</p>
@@ -462,13 +462,13 @@ height:50vh;
 </ul>
 </li>
 </ul>
-<h4 id="交换两个变量"><a href="#交换两个变量" class="headerlink" title="交换两个变量"></a>交换两个变量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一：定义临时变量的方式</span></span><br><span class="line">	<span class="comment">//推荐的方式</span></span><br><span class="line">	<span class="keyword">int</span> temp = num1;</span><br><span class="line">	num1 = num2;</span><br><span class="line">	num2 = temp;</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式二：好处：不用定义临时变量  </span></span><br><span class="line"><span class="comment">//弊端：① 相加操作可能超出存储范围 ② 有局限性：只能适用于数值类型</span></span><br><span class="line">	num1 = num1 + num2;</span><br><span class="line">	num2 = num1 - num2;</span><br><span class="line">	num1 = num1 - num2;</span><br><span class="line"><span class="comment">//方式三：使用位运算符</span></span><br><span class="line"><span class="comment">//有局限性：只能适用于数值类型</span></span><br><span class="line">	num1 = num1 ^ num2;</span><br><span class="line">	num2 = num1 ^ num2;</span><br><span class="line">	num1 = num1 ^ num2;</span><br></pre></td></tr></table></figure>
+<h4 id="交换两个变量"><a href="#交换两个变量" class="headerlink" title="交换两个变量"></a>交换两个变量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一：定义临时变量的方式</span></span><br><span class="line">	<span class="comment">//推荐的方式</span></span><br><span class="line">	<span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> num1;</span><br><span class="line">	num1 = num2;</span><br><span class="line">	num2 = temp;</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式二：好处：不用定义临时变量  </span></span><br><span class="line"><span class="comment">//弊端：① 相加操作可能超出存储范围 ② 有局限性：只能适用于数值类型</span></span><br><span class="line">	num1 = num1 + num2;</span><br><span class="line">	num2 = num1 - num2;</span><br><span class="line">	num1 = num1 - num2;</span><br><span class="line"><span class="comment">//方式三：使用位运算符</span></span><br><span class="line"><span class="comment">//有局限性：只能适用于数值类型</span></span><br><span class="line">	num1 = num1 ^ num2;</span><br><span class="line">	num2 = num1 ^ num2;</span><br><span class="line">	num1 = num1 ^ num2;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>异或：相同的变0不同变1 </p>
 <p>例如：</p>
-<p>a    00101  //10<br>b    01010  //20<br>c    01111  //30</p>
-<p>c = a^b = (c^b)^a</p>
+<p>a	00101  &#x2F;&#x2F;10<br>b	01010  &#x2F;&#x2F;20<br>c	01111  &#x2F;&#x2F;30</p>
+<p>c &#x3D; a^b &#x3D; (c^b)^a</p>
 </blockquote>
 <h4 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h4><p>公式：[a,b]  :  (int)(Math.random() * (b - a + 1) )+ a</p>
 
@@ -835,8 +835,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 18
@@ -874,7 +872,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2023/02/18/bolg_1/" >Themes and share</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2023/02/18/bolg_2/" >Three day</a>
         </li>
     
     
@@ -888,7 +886,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2023/02/18/bolg_2/" >Three day</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2023/02/18/bolg_1/" >Themes and share</a>
         </li>
     
     
@@ -1074,7 +1072,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
 </html>
 
 
